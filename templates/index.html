@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Thing</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="py-3 mb-4 border-bottom">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="../images/plant.jpg" width="50" height="50" border-radius="50%" class="me-3">
+                <h1 class="h4 mb-0">Shady Business</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Light Control</h5>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="d-flex gap-2">
+                                <form action="/red" method="POST">
+                                    <button type="submit" class="btn btn-outline-danger flex-grow-1" id="redButton" >
+                                        <i class="fas fa-lightbulb me-2"></i>Red
+                                    </button>
+                                </form>
+                                <form action="/green" method="POST">
+                                    <button class="btn btn-outline-success flex-grow-1" id="greenButton" type="submit">
+                                        <i class="fas fa-lightbulb me-2"></i>Green
+                                    </button>
+                                </form>
+                                <form action="/blue" method="POST">
+                                    <button class="btn btn-outline-primary flex-grow-1" id="blueButton">
+                                        <i class="fas fa-lightbulb me-2"></i>Blue
+                                    </button>
+                                </form>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-success flex-grow-1" id="masterOn">
+                                        <i class="fas fa-power-off me-2"></i>ON
+                                    </button>
+                                    <button class="btn btn-danger flex-grow-1" id="masterOff">
+                                        <i class="fas fa-power-off me-2"></i>OFF
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Timer Settings</h5>
+                        <form id="timerForm">
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <label for="hours" class="form-label">Hours</label>
+                                    <input type="number" class="form-control" id="hours" min="0" max="23" value="0">
+                                </div>
+                                <div class="col-6">
+                                    <label for="minutes" class="form-label">Minutes</label>
+                                    <input type="number" class="form-control" id="minutes" min="0" max="59" value="0">
+                                </div>
+                                <div class="col-12">
+                                    <div class="timer-display" id="timerDisplay">
+                                        00:00:00
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <button class="btn btn-primary w-100" id="startButton">
+                                        <i class="fas fa-play me-2"></i>Start
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 border-top">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-1">Created by:</p>
+                <p class="mb-0">
+                    <span class="badge bg-dark me-2"><a href="https://www.linkedin.com/in/brooke-oberlee-152735669abc/" target="_blank">Brooke Oberlee</a></span>
+                    <span class="badge bg-dark me-2"><a href="https://www.linkedin.com/in/feliciteneveu/" target="_blank">Felicite Neveu</a></span>
+                    <span class="badge bg-dark me-2"><a href="https://www.linkedin.com/in/megan-cichonski-592108297/" target="_blank">Megan Cichonski</a></span>
+                    <span class="badge bg-dark me-2"><a href="https://www.linkedin.com/in/khushi-sinha-4178a0294/" target="_blank">Khushi Sinha</a></span>
+                    <span class="badge bg-dark me-2"><a href="https://www.linkedin.com/in/sarah-bryan-16bb27291/" target="_blank">Sarah Bryan</a></span>
+                    <span class="badge bg-dark me-2"><a href="https://www.linkedin.com/in/aliucci/" target="_blank">Alessandro Liucci</a></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
