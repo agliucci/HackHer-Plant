@@ -15,17 +15,17 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/turn_red', methods=['GET', 'POST'])
+@app.route('/turn_red', methods=['POST'])
 def turn_red():
     #command("RED")
     return render_template('red.html')
 
-@app.route('/turn_green', methods=['GET', 'POST'])
+@app.route('/turn_green', methods=['POST'])
 def turn_green():
     #command("GREEN")
     return render_template('green.html')
 
-@app.route('/turn_blue', methods=['GET', 'POST'])
+@app.route('/turn_blue', methods=['POST'])
 def turn_blue():
     #command("BLUE")
     return render_template('blue.html')
